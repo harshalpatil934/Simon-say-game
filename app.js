@@ -7,12 +7,14 @@ let started=false;
 let hs=0;
 let h2=document.querySelector("h2");
 let h3=document.querySelector("h3");
+let st=document.getElementById("start");
 
-document.addEventListener("click",function(){
+st.addEventListener("click",function(){
     if(started == false){
     console.log("game started");
     started=true;
     levelup();
+    st.innerText="start";
     }
 });
 function btnflash(btn){
@@ -54,7 +56,8 @@ function check(idx){
             setTimeout(levelup,1000);
         }
     }else{
-        h2.innerText="game over!! your score was "+level+"\nclick anywhere to restart game";
+        h2.innerHTML="game over!! your score was "+level+"<br>click restart to restart the game";
+        st.innerText="restart";
         document.querySelector("body").style.backgroundColor="red";
         setTimeout(function(){
         document.querySelector("body").style.backgroundColor="white";
