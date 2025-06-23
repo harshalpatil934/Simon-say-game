@@ -8,7 +8,7 @@ let hs=0;
 let h2=document.querySelector("h2");
 let h3=document.querySelector("h3");
 
-document.addEventListener("keypress",function(){
+document.addEventListener("click",function(){
     if(started == false){
     console.log("game started");
     started=true;
@@ -54,7 +54,7 @@ function check(idx){
             setTimeout(levelup,1000);
         }
     }else{
-        h2.innerText="game over!! your score was "+level+"\npress any key to restart game";
+        h2.innerText="game over!! your score was "+level+"\nclick anywhere to restart game";
         document.querySelector("body").style.backgroundColor="red";
         setTimeout(function(){
         document.querySelector("body").style.backgroundColor="white";
